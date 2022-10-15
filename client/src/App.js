@@ -5,10 +5,28 @@ import Profile from "./pages/profile/Profile";
 import MissingPerson from "./pages/missingperson/MissingPerson";
 import SafeLocation from "./pages/safelocation/SafeLocation";
 import { Routes, Route, useNavigate } from "react-router-dom";
-import NavBar from "./components/NavBar"
-import 'bootstrap/dist/css/bootstrap.min.css';
+import NavBar from "./components/NavBar";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
+  const [user, setUser] = useState(null);
+
+  // useEffect(() => {
+  //   getUser();
+  // }, []);
+
+  // //getting user information from our database by using useEffect and Fetching
+  // const getUser = () =>
+  //   //custom route /me checks if user is currently logged in
+  //   fetch("/me").then((r) => {
+  //     if (r.ok) {
+  //       r.json().then((user) => setUser(user)); // if user is logged in then set user informtion to userstate
+  //     }
+  //   });
+
+  // checks if user is not logged in then redirect to Homepage that has login modal
+  if (!user) return <Home />;
+  // user={user} setUser={setUser} navigate={navigate}
   return (
     <div className="App">
       <NavBar />
