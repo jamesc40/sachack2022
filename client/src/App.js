@@ -5,12 +5,15 @@ import Profile from "./pages/profile/Profile";
 import MissingPerson from "./pages/missingperson/MissingPerson";
 import SafeLocation from "./pages/safelocation/SafeLocation";
 import { Routes, Route, useNavigate } from "react-router-dom";
+import NavBar from "./components/NavBar"
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
+      <NavBar />
       <Routes>
         <Route exact path="/" element={<Home />}></Route>
         <Route exact path="/dashboard" element={<Dashboard />}></Route>
