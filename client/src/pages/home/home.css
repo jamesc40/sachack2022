@@ -1,0 +1,28 @@
+.home{
+    text-align: center;
+    margin-top: 30vh;
+
+}
+
+.primary_title {
+    font-size: 80px;
+    font-weight:8500;
+    color: rgb(0, 0, 0);
+    margin-bottom: 40px;
+}
+
+
+.primary_button {
+
+    color: rgb(255,255,255);
+    text-transform: uppercase;
+    font-size: 15px;
+    background: linear-gradient(45deg, rgb(119, 122, 124), rgb(164, 165, 165));
+    padding: 12px 30px;
+    border-radius: 30px;
+    border: none;
+}
+.primary_button:hover {
+    background: linear-gradient(260deg, rgb(48, 196, 254), rgb(64, 255, 249));
+}
+

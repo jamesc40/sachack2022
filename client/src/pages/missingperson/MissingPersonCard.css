@@ -1,0 +1,28 @@
+#figure{
+    margin-left: 4.75%
+}
+
+#caption{
+    text-align: center
+}
+
+#all-description{
+    margin-left: 15px
+}
+
+#container{
+    display:flex;
+}
+
+#table-header{
+    text-align: center;
+}
+
+#table{
+    width: 33%;
+    margin-left: 2%;
+}
+
+#ethnicity{
+    text-align: center;
+}
