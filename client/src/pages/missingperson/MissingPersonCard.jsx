@@ -1,12 +1,12 @@
 import React from "react"
 import Figure from 'react-bootstrap/Figure';
-import Card from 'react-bootstrap/Card';
-import ListGroup from 'react-bootstrap/ListGroup';
 import Table from 'react-bootstrap/Table';
 import "./MissingPersonCard.css"
 
 
-const MissingPersonCard = () => {
+const MissingPersonCard = ({data}) => {
+    const {name, age, gender, eyeColor, hairColor, height, weight, ethnicity, description, image} = data
+
     return (
         <>
             <div id="container">
@@ -15,60 +15,53 @@ const MissingPersonCard = () => {
                         width={300}
                         height={300}
                         alt="Missing Person"
-                        src="https://dragonball.guru/wp-content/uploads/2021/01/goku-dragon-ball-guru.jpg"
+                        src={image}
                     />
                     <Figure.Caption id="caption">
-                        Goku
+                        {name}
                     </Figure.Caption>
                 </Figure>
                 <Table id="table" striped bordered hover>
                     <thead>
                         <tr>
-                            <th colSpan={2} id="table-header">Goku</th>
+                            <th colSpan={2} id="table-header">{name}</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Gender: Male</td>
-                            <td>Age: 28</td>
+                            <td>Gender: {gender}</td>
+                            <td>Age: {age}</td>
                         </tr>
                         <tr>
-                            <td>Height: 5 ft 5 in</td>
-                            <td>Weight: 140 lbs</td>
+                            <td>Height: {height} ft</td>
+                            <td>Weight: {weight} lbs</td>
                         </tr>
                         <tr>
-                            <td>Eye Color: Brown</td>
-                            <td>Hair Color: Brown</td>
+                            <td>Eye Color: {eyeColor}</td>
+                            <td>Hair Color: {hairColor}</td>
                         </tr>
                         <tr>
-                            <td colSpan={2} id="ethnicity">Ethnicity: Asian</td>
+                            <td colSpan={2} id="ethnicity">Ethnicity: {ethnicity}</td>
                         </tr>
                     </tbody>
                 </Table>
-                {/* <Card id="all-description" style={{ width: '18rem' }}>
-                    <Card.Header>Goku</Card.Header>
-                    <ListGroup variant="flush">
-                        <div className="description-container">
-                            <ListGroup.Item className="description-width">Gender: Male</ListGroup.Item>
-                            <ListGroup.Item className="description-width">Age: 28</ListGroup.Item>
-                        </div>
-                       
-                        <div className="description-container">
-                            <ListGroup.Item className="description-width">Height: 5 ft 5 in</ListGroup.Item>
-                            <ListGroup.Item className="description-width">Weight: 140 lbs</ListGroup.Item>
-                        </div>
-
-                        <div className="description-container">
-                            <ListGroup.Item className="description-width">Eye Color: Brown</ListGroup.Item>
-                            <ListGroup.Item className="description-width">Hair Color: Brown</ListGroup.Item>
-                        </div>
-                        
-                        <ListGroup.Item id="ethnicity">Ethnicity: Brown</ListGroup.Item>
-                    </ListGroup>
-                </Card> */}
+                <Table id="description" striped bordered>
+                    <thead>
+                        <tr>
+                            <th>
+                                Description
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                {description}
+                            </td>
+                        </tr>
+                    </tbody>
+                </Table>
             </div>
-           
-
         </>
     )
 }
