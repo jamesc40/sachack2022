@@ -15,6 +15,7 @@ const NavBar = () => {
           <Nav.Link href="profile">
             <img alt="goku" src="https://dragonball.guru/wp-content/uploads/2021/01/goku-dragon-ball-guru.jpg" width="50px"/>
           </Nav.Link>
+          <Nav.Link>Signout</Nav.Link>
         </Nav>
         
       </Container>
