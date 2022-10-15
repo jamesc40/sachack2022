@@ -8,7 +8,7 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 import NavBar from "./components/NavBar"
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import "./App.css";
+// import "./App.css";
 
 function App() {
   return (
