@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  # resources :users, only: [:show, :create, :destroy]
+
+  resources :missing_person_data
+  resources :users, only: [:show, :create, :destroy]
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
