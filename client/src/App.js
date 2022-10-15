@@ -13,18 +13,18 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   const [user, setUser] = useState(null);
 
-  // useEffect(() => {
-  //   getUser();
-  // }, []);
+  useEffect(() => {
+    getUser();
+  }, []);
 
-  // //getting user information from our database by using useEffect and Fetching
-  // const getUser = () =>
-  //   //custom route /me checks if user is currently logged in
-  //   fetch("/me").then((r) => {
-  //     if (r.ok) {
-  //       r.json().then((user) => setUser(user)); // if user is logged in then set user informtion to userstate
-  //     }
-  //   });
+  //getting user information from our database by using useEffect and Fetching
+  const getUser = () =>
+    //custom route /me checks if user is currently logged in
+    fetch("/me").then((r) => {
+      if (r.ok) {
+        r.json().then((user) => setUser(user)); // if user is logged in then set user informtion to userstate
+      }
+    });
 
   // checks if user is not logged in then redirect to Homepage that has login modal
   if (!user) return <Home />;
