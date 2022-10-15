@@ -6,27 +6,18 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 const NavBar = () => {
   return (
-    <Navbar expand="lg">
+    <Navbar >
       <Container>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>
-          </Nav>
-        </Navbar.Collapse>
+        <Navbar.Brand href="#home">Safe Haven</Navbar.Brand>
+        <Nav>
+          <Nav.Link href="safelocation">Safe Locations</Nav.Link>
+          <Nav.Link href="missingperson">Missing Persons</Nav.Link>
+          <Nav.Link href="profile">
+            <img alt="goku" src="https://dragonball.guru/wp-content/uploads/2021/01/goku-dragon-ball-guru.jpg" width="50px"/>
+          </Nav.Link>
+          <Nav.Link>Signout</Nav.Link>
+        </Nav>
+        
       </Container>
     </Navbar>
   );
