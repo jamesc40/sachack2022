@@ -4,7 +4,13 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 
-const NavBar = ({ isLoggedin }) => {
+const NavBar = ({ isLoggedin, handleLogin }) => {
+  const handleLogout = async () => {
+    await fetch("/logout", { method: "DELETE" });
+    handleLogin(false);
+    localStorage.clear();
+  };
+
   return (
     <Navbar>
       <Container>
@@ -25,7 +31,7 @@ const NavBar = ({ isLoggedin }) => {
               <Nav.Link href="signup">Signup</Nav.Link>
             </>
           ) : (
-            <Nav.Link>Signout</Nav.Link>
+            <Nav.Link onClick={handleLogout}>Signout</Nav.Link>
           )}
         </Nav>
       </Container>
