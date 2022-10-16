@@ -4,6 +4,7 @@ import "./authmodal.css";
 const AuthModal = ({ setShowModal, setShowLogin, showLogin }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [errors, setErrors] = useState([]);
+
   function handleClick() {
     setShowModal(false);
   }

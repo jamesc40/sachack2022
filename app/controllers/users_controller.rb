@@ -1,19 +1,13 @@
 class UsersController < ApplicationController
-  skip_before_action :authorize, only: [:index, :create, :update]
+  skip_before_action :authorize, only: [:create, :update]
   rescue_from ActiveRecord::RecordInvalid, with: :invalid
   
-  def index
-    user = User.all
-    render json: user, status: :ok
-  
-  end
-
-   def show
+  def show
     render json: @current_user
   end
 
   def update
-    user = User.find(params[:id])
+    user = User.find!(params[:id])
     user.update!(profile_params)
     render json: user, status: :ok
    end
@@ -25,7 +19,7 @@ class UsersController < ApplicationController
   end
   
   def destroy
-    user = User.find(params[:id])
+    user = User.find!(params[:id])
     user.destroy
     head :no_content
   end
@@ -33,7 +27,7 @@ class UsersController < ApplicationController
   private
     
   def user_params
-    params.permit(:firstName, :lastName, :email, :password, :password_digest, :longitude, :latitude, :isSafe)
+    params.permit(:firstName, :lastName, :email, :password, :longitude, :latitude, :isSafe)
   end
 
    
