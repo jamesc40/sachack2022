@@ -7,35 +7,32 @@ import SafeLocation from "./pages/safelocation/SafeLocation";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import "bootstrap/dist/css/bootstrap.min.css";
-import GetLocation from "./components/GetLocation.jsx";
+import Login from "./pages/auth/Login";
+import Signup from "./pages/auth/Signup";
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(false);
 
   /*useEffect(() => {*/
   /*getUser();*/
   /*}, []);*/
 
   /*//getting user information from our database by using useEffect and Fetching*/
-  /*const getUser = async () =>*/
+  /*const getUser = async () => {*/
   /*//custom route /me checks if user is currently logged in*/
-  /*// let req = await fetch("/validate-couple");*/
-  /*let req = await fetch("/me")*/
+  /*let req = await fetch("/me");*/
   /*if (req.ok) {*/
-  /*setUser(req.json())*/
+  /*setUser(req.json());*/
   /*}*/
-  /*});*/
+  /*};*/
 
   // checks if user is not logged in then redirect to Homepage that has login modal
-  // if (!user) return <Home />;
-  // user={user} setUser={setUser} navigate={navigate}
+  //if (!user) return <Home />;
   return (
     <div className="App">
-      <NavBar />
+      <NavBar isLoggedin={user} />
       <div className="container">
-        <GetLocation />
         <Routes>
-          <Route exact path="/" element={<Home />}></Route>
           <Route exact path="/dashboard" element={<Dashboard />}></Route>
           <Route exact path="/profile" element={<Profile />}></Route>
           <Route
@@ -44,6 +41,9 @@ function App() {
             element={<MissingPerson />}
           ></Route>
           <Route exact path="/safelocation" element={<SafeLocation />}></Route>
+          <Route exact path="/login" element={<Login />}></Route>
+          <Route exact path="/signup" element={<Signup />}></Route>
+          <Route exact path="/" element={<Home />}></Route>
         </Routes>
       </div>
     </div>
