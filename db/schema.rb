@@ -24,6 +24,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_15_193817) do
     t.integer "weight"
     t.string "ethnicity"
     t.text "description"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

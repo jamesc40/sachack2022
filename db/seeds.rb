@@ -9,4 +9,61 @@
 puts "Seeding User Data.."
 User.create(firstName: "Hyun", lastName:"Cho", email: "hcho774@gmail.com", password_digest: BCrypt::Password.create("123"), longitude: 1.234, latitude: 1.34, isSafe: true)
 
-puts "seeding done"
+puts "Seeding Missing Person Data.."
+MissingPersonData.create(
+    name: "Joe",
+    age: 28,
+    gender: "male",
+    eyeColor: "green",
+    hairColor: "green",
+    height: 6,
+    weight: 145,
+    ethnicity: "Asian",
+    description: "Last seen wearing blue shirt. Green shoes. 
+    Last known location is this.",
+    image: "https://dragonball.guru/wp-content/uploads/2021/01/goku-dragon-ball-guru.jpg"
+)
+
+MissingPersonData.create(
+    name: "James",
+    age: 29,
+    gender: "male",
+    eyeColor: "brown",
+    hairColor: "brown",
+    height: 6,
+    weight: 145,
+    ethnicity: "Caucasian",
+    description: "Last seen wearing blue shirt. Green shoes. 
+    Last known location is this.",
+    image: "https://dragonball.guru/wp-content/uploads/2021/01/goku-dragon-ball-guru.jpg"
+)
+
+MissingPersonData.create(
+    name: "Eric",
+    age: 29,
+    gender: "male",
+    eyeColor: "blue",
+    hairColor: "blue",
+    height: 6,
+    weight: 145,
+    ethnicity: "Asian",
+    description: "Last seen wearing blue shirt. Green shoes. 
+    Last known location is this.",
+    image: "https://dragonball.guru/wp-content/uploads/2021/01/goku-dragon-ball-guru.jpg"
+)
+
+MissingPersonData.create(
+    name: "Hyun",
+    age: 30,
+    gender: "male",
+    eyeColor: "black",
+    hairColor: "black",
+    height: 5,
+    weight: 145,
+    ethnicity: "Asian",
+    description: "Last seen wearing blue shirt. Green shoes. 
+    Last known location is this.",
+    image: "https://dragonball.guru/wp-content/uploads/2021/01/goku-dragon-ball-guru.jpg"
+)
+
+puts "seeding Missing Person DONE!!!"

@@ -3,7 +3,9 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-
+import Button from "react-bootstrap/Button";
+import logo from "../images/SafeLogo.png";
+import "./navbar.css";
 const NavBar = ({
   user,
   showModal,
@@ -30,33 +32,49 @@ const NavBar = ({
   return (
     <Navbar>
       <Container>
-        <Navbar.Brand href="#home">Safe Haven</Navbar.Brand>
-        <Nav>
-          <Nav.Link href="safelocation">Safe Locations</Nav.Link>
-          <Nav.Link href="missingperson">Missing Persons</Nav.Link>
-          <Nav.Link href="profile">
+        <Nav.Link
+          className="logo_container"
+          href="/"
+          style={{ textDecoration: "none" }}
+        >
+          <img className="logo" src={logo} alt="logo" />
+        </Nav.Link>
+
+        <Nav className="items">
+          <Nav.Link style={{ color: "black" }} id="item" href="safelocation">
+            Safe Locations
+          </Nav.Link>
+          <Nav.Link style={{ color: "black" }} id="item" href="missingperson">
+            Missing Persons
+          </Nav.Link>
+          <Nav.Link id="item" href="profile">
             <img
+              className="avatar"
               alt="goku"
               src="https://dragonball.guru/wp-content/uploads/2021/01/goku-dragon-ball-guru.jpg"
               width="50px"
             />
           </Nav.Link>
           {!user && !minimal ? (
-            <button
+            <Button
               onClick={handleClick}
               className="nav_btn"
               disabled={showModal}
+              variant="secondary"
+              size="sm"
             >
               Login
-            </button>
+            </Button>
           ) : (
-            <button
+            <Button
               onClick={handleClick}
               className="nav_btn"
               disabled={showModal}
+              variant="secondary"
+              size="sm"
             >
               Logout
-            </button>
+            </Button>
           )}
         </Nav>
       </Container>

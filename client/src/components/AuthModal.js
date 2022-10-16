@@ -157,7 +157,7 @@ const AuthModal = ({ setShowModal, setUser, showLogin, navigate }) => {
             </div>
           )}
           <div className="d-grid gap-2 mt-3">
-            <button type="submit" className="btn btn-primary">
+            <button type="submit" className="btn btn-dark">
               {isLoading ? "Loading..." : "Submit"}
             </button>
           </div>
