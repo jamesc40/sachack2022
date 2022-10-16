@@ -1,9 +1,0 @@
-.news-container {
-  border: 1px solid #000;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 60%;
-}
