@@ -1,5 +1,5 @@
 #figure{
-    margin-left: 4.75%
+    margin-left: 4.75%;
 }
 
 #caption{
@@ -12,6 +12,7 @@
 
 #container{
     display:flex;
+    margin-bottom: 50px
 }
 
 #table-header{
@@ -25,4 +26,9 @@
 
 #ethnicity{
     text-align: center;
+}
+
+#description{
+    width: 33%;
+    margin-left: 2%
 }
