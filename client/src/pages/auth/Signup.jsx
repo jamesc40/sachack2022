@@ -1,6 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-export default function Signup() {
+
+export default function Signup({ handleLogin }) {
+  let nav = useNavigate();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     let form = document.querySelector("#signup-form");
@@ -12,7 +16,9 @@ export default function Signup() {
     });
 
     if (req.ok) {
-      console.log(await req.json());
+      localStorage.setItem("loggedIn", JSON.stringify(true));
+      handleLogin(true);
+      nav("/dashboard");
     }
 
     form.reset();

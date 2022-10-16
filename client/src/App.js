@@ -9,29 +9,22 @@ import NavBar from "./components/NavBar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Login from "./pages/auth/Login";
 import Signup from "./pages/auth/Signup";
-import MissingPersonForm from "./pages/missingperson/MissingPersonForm"
+import MissingPersonForm from "./pages/missingperson/MissingPersonForm";
 
 function App() {
-  const [user, setUser] = useState(false);
+  const [isLoggedin, setLogin] = useState({});
 
-  /*useEffect(() => {*/
-  /*getUser();*/
-  /*}, []);*/
+  const handleLogin = (val) => setLogin(val);
 
-  /*//getting user information from our database by using useEffect and Fetching*/
-  /*const getUser = async () => {*/
-  /*//custom route /me checks if user is currently logged in*/
-  /*let req = await fetch("/me");*/
-  /*if (req.ok) {*/
-  /*setUser(req.json());*/
-  /*}*/
-  /*};*/
+  useEffect(() => {
+    let loggedIn = localStorage.getItem("loggedIn");
+    if (!loggedIn) return;
+    handleLogin(true);
+  });
 
-  // checks if user is not logged in then redirect to Homepage that has login modal
-  //if (!user) return <Home />;
   return (
     <div className="App">
-      <NavBar isLoggedin={user} />
+      <NavBar isLoggedin={isLoggedin} handleLogin={handleLogin} />
       <div className="container">
         <Routes>
           <Route exact path="/dashboard" element={<Dashboard />}></Route>
@@ -41,10 +34,22 @@ function App() {
             path="/missingperson"
             element={<MissingPerson />}
           ></Route>
-          <Route exact path = "/missing_person_form" element={<MissingPersonForm />}></Route>
+          <Route
+            exact
+            path="/missing_person_form"
+            element={<MissingPersonForm />}
+          ></Route>
           <Route exact path="/safelocation" element={<SafeLocation />}></Route>
-          <Route exact path="/login" element={<Login />}></Route>
-          <Route exact path="/signup" element={<Signup />}></Route>
+          <Route
+            exact
+            path="/login"
+            element={<Login handleLogin={handleLogin} />}
+          ></Route>
+          <Route
+            exact
+            path="/signup"
+            element={<Signup handleLogin={handleLogin} />}
+          ></Route>
           <Route exact path="/" element={<Home />}></Route>
         </Routes>
       </div>
