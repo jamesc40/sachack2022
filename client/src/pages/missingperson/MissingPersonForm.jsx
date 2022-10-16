@@ -66,15 +66,15 @@ const MissingPersonForm = () => {
 
     return (
         <Form id="missing-person-form" onSubmit={handleSubmit}>
-            <Form.Group className="mb-3" id="name">
+            <Form.Group className="mb-3" id="nameGroup">
                 <Form.Label>Full Name</Form.Label>
                 <Form.Control type="text" name="name" placeholder="Enter Full Name" onChange={handleInputChange}/>  
             </Form.Group>
-            <Form.Group className="mb-3" id="age">
+            <Form.Group className="mb-3" id="ageGroup">
                 <Form.Label>Age</Form.Label>
                 <Form.Control type="text" name="age" placeholder="Enter Age" onChange={handleInputChange}/>  
             </Form.Group>
-            <Form.Group className="mb-3" id="gender">
+            <Form.Group className="mb-3" id="genderGroup">
                 <Form.Label>Gender</Form.Label>
                 <Form.Select name="gender" onChange={handleInputChange}>
                     <option value="">Select Gender</option>
@@ -83,7 +83,7 @@ const MissingPersonForm = () => {
                     <option value="Not Declared">Not Declared</option>
                 </Form.Select>
             </Form.Group>
-            <Form.Group className="mb-3" id="eyeColor">
+            <Form.Group className="mb-3" id="eyeColorGroup">
                 <Form.Label>Eye Color</Form.Label>
                 <Form.Select name="eyeColor" onChange={handleInputChange}>
                     <option value="">Select Eye Color</option>
@@ -96,7 +96,7 @@ const MissingPersonForm = () => {
                     <option value="Red">Red</option>
                 </Form.Select>
             </Form.Group>
-            <Form.Group className="mb-3" id="hairColor">
+            <Form.Group className="mb-3" id="hairColorGroup">
                 <Form.Label>Hair Color</Form.Label>
                 <Form.Select name="hairColor" onChange={handleInputChange}>
                     <option value="">Select Hair Color</option>
@@ -109,15 +109,15 @@ const MissingPersonForm = () => {
                     <option value="White">White</option>
                 </Form.Select>
             </Form.Group>
-            <Form.Group className="mb-3" id="height">
+            <Form.Group className="mb-3" id="heightGroup">
                 <Form.Label>Height</Form.Label>
                 <Form.Control type="text" name="height" placeholder="Enter Height" onChange={handleInputChange}/>  
             </Form.Group>
-            <Form.Group className="mb-3" id="weight">
+            <Form.Group className="mb-3" id="weightGroup">
                 <Form.Label>Weight</Form.Label>
                 <Form.Control type="text" name="weight" placeholder="Enter Weight" onChange={handleInputChange}/>  
             </Form.Group>
-            <Form.Group className="mb-3" id="ethnicity">
+            <Form.Group className="mb-3" id="ethnicityGroup">
                 <Form.Label>Ethnicity</Form.Label>
                 <Form.Select name="ethnicity" onChange={handleInputChange}>
                     <option value="">Select Ethnicity</option>
@@ -128,9 +128,9 @@ const MissingPersonForm = () => {
                     <option value="Native Hawaiian or Other Pacific Islander">Native Hawaiian or Other Pacific Islander</option>
                 </Form.Select>
             </Form.Group>
-            <Form.Group className="mb-3" id="description">
+            <Form.Group className="mb-3" id="descriptionGroup">
                 <Form.Label>Description</Form.Label>
-                <Form.Control as="textarea" name="description" placeholder="Enter Description" onChange={handleInputChange}/>  
+                <Form.Control as="textarea" rows={5} id="textarea" name="description" placeholder="Enter Description" onChange={handleInputChange}/>  
             </Form.Group>
             <ImageUploading
                 multiple="false"
