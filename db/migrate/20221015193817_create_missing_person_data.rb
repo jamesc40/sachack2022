@@ -10,6 +10,7 @@ class CreateMissingPersonData < ActiveRecord::Migration[7.0]
       t.integer :weight
       t.string :ethnicity
       t.text :description
+      t.string :image
 
       t.timestamps
     end
