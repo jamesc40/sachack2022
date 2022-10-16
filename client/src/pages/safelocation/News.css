@@ -1,0 +1,14 @@
+.news-container {
+    border: 1px solid #000;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 36vh;
+  }
+  
+  .title-container {
+    margin-top: 6px;
+  }
