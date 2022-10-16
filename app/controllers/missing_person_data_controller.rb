@@ -1,4 +1,7 @@
 class MissingPersonDataController < ApplicationController
+  
+  before_action :authorize, only: [:create, :update, :destroy]
+  
   def index
     missingPersonData = MissingPersonData.all
     render json: missingPersonData, status: :ok
