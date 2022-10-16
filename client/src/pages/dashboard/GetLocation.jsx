@@ -1,6 +1,6 @@
 import Map from "./Map";
 import { useGeolocated } from "react-geolocated";
-
+import "./dashboard.css"
 export default function GetLocation() {
   const { coords, isGeolocationAvailable, isGeolocationEnabled } =
     useGeolocated({
@@ -19,6 +19,6 @@ export default function GetLocation() {
       <Map coords={coords} />
     </>
   ) : (
-    <div>Getting the location data&hellip; </div>
+    <div className="location">Getting the location data&hellip; </div>
   );
 }

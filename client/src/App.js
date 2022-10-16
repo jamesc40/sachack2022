@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Home from "./pages/home/Home";
-import Dashboard from "./pages/dashboard/Dashboard";
+import Dashboard from "./pages/dashboard/Dashboard.jsx";
 import Profile from "./pages/profile/Profile";
 import MissingPerson from "./pages/missingperson/MissingPerson";
 import SafeLocation from "./pages/safelocation/SafeLocation";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import NavBar from "./components/NavBar";
+import MissingPersonForm from "./pages/missingperson/MissingPersonForm.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Login from "./pages/auth/Login";
 import Signup from "./pages/auth/Signup";
@@ -65,6 +66,7 @@ function App() {
           setShowModal={setShowModal}
           showLogin={showLogin}
           showModal={showModal}
+          getUser={getUser}
         />
       </div>
     );
@@ -101,6 +103,12 @@ function App() {
         <Route exact path="/dashboard" element={<Dashboard />}></Route>
         <Route exact path="/profile" element={<Profile />}></Route>
         <Route exact path="/missingperson" element={<MissingPerson />}></Route>
+        <Route
+          exact
+          path="/missing_person_form"
+          element={<MissingPersonForm />}
+        ></Route>
+
         <Route exact path="/safelocation" element={<SafeLocation />}></Route>
       </Routes>
     </div>

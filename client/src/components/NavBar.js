@@ -47,19 +47,19 @@ const NavBar = ({
           <Nav.Link style={{ color: "black" }} id="item" href="missingperson">
             Missing Persons
           </Nav.Link>
-          <Nav.Link id="item" href="profile">
+          {/* <Nav.Link id="item" href="profile">
             <img
               className="avatar"
               alt="goku"
               src="https://dragonball.guru/wp-content/uploads/2021/01/goku-dragon-ball-guru.jpg"
               width="50px"
             />
-          </Nav.Link>
+          </Nav.Link> */}
           {!user && !minimal ? (
             <Button
               onClick={handleClick}
               className="nav_btn"
-              disabled={showModal}
+              // disabled={showModal}
               variant="secondary"
               size="sm"
             >
@@ -69,7 +69,7 @@ const NavBar = ({
             <Button
               onClick={handleClick}
               className="nav_btn"
-              disabled={showModal}
+              // disabled={showModal}
               variant="secondary"
               size="sm"
             >

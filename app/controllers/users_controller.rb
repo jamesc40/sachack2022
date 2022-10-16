@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :authorize, only: [:create, :update]
+  skip_before_action :authorize, only: [:index, :create, :update]
   rescue_from ActiveRecord::RecordInvalid, with: :invalid
   
   def index

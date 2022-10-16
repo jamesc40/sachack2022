@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import AuthModal from "../../components/AuthModal";
 import NavBar from "../../components/NavBar";
 import "./home.css";
+import AuthModal from "../../components/AuthModal";
+
 const Home = ({
+  getUser,
   user,
   setUser,
   navigate,
@@ -45,6 +47,7 @@ const Home = ({
         </button>
         {showModal && (
           <AuthModal
+            getUser={getUser}
             setShowModal={setShowModal}
             setUser={setUser}
             setShowLogin={setShowLogin}

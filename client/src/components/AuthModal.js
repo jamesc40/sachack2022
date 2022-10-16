@@ -11,7 +11,7 @@ const form = {
   isSafe: true,
 };
 
-const AuthModal = ({ setShowModal, setUser, showLogin, navigate }) => {
+const AuthModal = ({ setShowModal, setUser, showLogin, navigate, getUser }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   //errormessage useState initial value of []
@@ -77,8 +77,9 @@ const AuthModal = ({ setShowModal, setUser, showLogin, navigate }) => {
           r.json().then((user) => {
             //set current user to signedup user
             setUser(user);
+
             //navigate to profile page
-            navigate("/profile");
+            navigate("/dashboard");
           });
         } else {
           r.json().then((err) => {
