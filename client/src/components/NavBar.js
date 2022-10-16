@@ -11,6 +11,8 @@ const NavBar = ({ isLoggedin, handleLogin }) => {
     localStorage.clear();
   };
 
+  console.log(isLoggedin);
+
   return (
     <Navbar>
       <Container>

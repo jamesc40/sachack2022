@@ -12,7 +12,7 @@ import Signup from "./pages/auth/Signup";
 import MissingPersonForm from "./pages/missingperson/MissingPersonForm";
 
 function App() {
-  const [isLoggedin, setLogin] = useState({});
+  const [isLoggedin, setLogin] = useState(false);
 
   const handleLogin = (val) => setLogin(val);
 
