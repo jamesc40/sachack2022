@@ -2,6 +2,7 @@ import React,{useState} from "react"
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import ImageUploading from 'react-images-uploading'
+import "./MissingPersonForm.css"
 
 const MissingPersonForm = () => {
 
@@ -17,11 +18,14 @@ const MissingPersonForm = () => {
     }
     //image upload setup
     const maxNumber = 1;
-    function handleImageChange(e){
-        if(e[0]){
+    const [images, setImages] = useState([])
+    function handleImageChange(imageList, addUpdateIndex){
+        setImages(imageList)
+        
+        if(imageList[0]){
             setFormData({
                 ...formData,
-                "image": e[0].image
+                "image": imageList[0].image
             })
         }else{
             setFormData({
@@ -58,11 +62,8 @@ const MissingPersonForm = () => {
         }
     }
     console.log(errors)
-
-   
-
-
     console.log(formData)
+
     return (
         <Form id="missing-person-form" onSubmit={handleSubmit}>
             <Form.Group className="mb-3" id="name">
@@ -134,7 +135,7 @@ const MissingPersonForm = () => {
             <ImageUploading
                 multiple="false"
                 name="image"
-                // value={images}
+                value={images}
                 onChange={handleImageChange}
                 maxNumber={maxNumber}
                 dataURLKey="image"
@@ -159,17 +160,17 @@ const MissingPersonForm = () => {
                     <Button variant = "light" onClick={onImageRemoveAll}>Remove Image</Button>
                     {imageList.map((image, index) => (
                     <div key={index} className="image-item">
-                        <img src={image.data_url} alt="" width="100" />
+                        <img src={image.image} alt="" width="100" />
                         <div className="image-item__btn-wrapper">
-                        <Button variant = "light" onClick={() => onImageUpdate(index)}>Update</Button>
-                        <Button variant = "light" onClick={() => onImageRemove(index)}>Remove</Button>
+                            <Button variant = "light" onClick={() => onImageUpdate(index)}>Update</Button>
+                            <Button variant = "light" onClick={() => onImageRemove(index)}>Remove</Button>
                         </div>
                     </div>
                     ))}
                 </div>
                 )}
             </ImageUploading>
-            <Button type="submit">Submit</Button>
+            <Button id="submit" type="submit">Submit</Button>
         </Form>
     )
 }
