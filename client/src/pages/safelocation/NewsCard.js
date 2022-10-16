@@ -1,14 +1,24 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Stack from 'react-bootstrap/Stack';
 import Card from 'react-bootstrap/Card';
 
 function NewsCard() {
 
-  const url = "rPniJbwGLKW68npVL5K0QfKCC5EbD3Q0"
+  const url = "https://rss.nytimes.com/services/xml/rss/nyt/Climate.xml"
+  const [news, setNews] = useState([{}])
+
+
+  useEffect(() => {
+    fetch(url)
+    .then(response => response.json())
+    .then (news => setNews(news))
+},[])
+
+console.log(news)
 
   return (
-    <Stack className="ml-2">
-      <Card style={{ width: '30rem' }} >
+    <Stack className="news-card">
+      <Card style={{ width: '35rem' }} >
         <Card.Body>
           <Card.Title>Incoming Hurricane</Card.Title>
           <Card.Text>
