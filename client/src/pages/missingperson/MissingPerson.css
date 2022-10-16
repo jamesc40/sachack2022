@@ -1,6 +1,9 @@
 #add{
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 15px;
     margin-bottom: 20px
+}
+
+#looking{
+    margin-top: 10px;
+    display:flex
 }

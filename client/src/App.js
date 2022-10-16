@@ -9,6 +9,7 @@ import NavBar from "./components/NavBar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Login from "./pages/auth/Login";
 import Signup from "./pages/auth/Signup";
+import MissingPersonForm from "./pages/missingperson/MissingPersonForm"
 
 function App() {
   const [user, setUser] = useState(false);
@@ -40,6 +41,7 @@ function App() {
             path="/missingperson"
             element={<MissingPerson />}
           ></Route>
+          <Route exact path = "/missing_person_form" element={<MissingPersonForm />}></Route>
           <Route exact path="/safelocation" element={<SafeLocation />}></Route>
           <Route exact path="/login" element={<Login />}></Route>
           <Route exact path="/signup" element={<Signup />}></Route>
