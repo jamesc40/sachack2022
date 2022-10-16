@@ -5,5 +5,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 60%;
+  width: 100%;
+  height: 36vh;
+}
+
+.title-container {
+  margin-top: 6px;
 }

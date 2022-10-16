@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 60%;
+  width: 80%;
 }
 
 .city {
@@ -14,10 +14,12 @@
 }
 
 .temp {
-font-size: 90px;
+font-size: 50px;
 padding:10px;
 border: 1px solid #000;
 border-radius: 10px;
+width: 70%;
+text-align: center;
 }
 
 .weather {

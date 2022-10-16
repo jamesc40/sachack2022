@@ -1,19 +1,25 @@
 import React from "react";
 import Weather from "./Weather";
 import News from "./News";
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 const SafeLocation = () => {
   return (
     <div>
       <h1>Safe Location Page</h1>
-      {/* <div class="row justify-content-around">
-        <div class="col-4">
+      <Container>
+        <Row>
+        <Col>
           <Weather />
-        </div>
-        <div class="col-4">
+        </Col>
+        
+        <Col>
           <News />
-        </div>
-      </div> */}
+        </Col>
+        </Row>
+      </Container>
     </div>
   )
 };
