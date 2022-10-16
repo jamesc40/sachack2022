@@ -1,5 +1,6 @@
 .news-container {
     border: 1px solid #000;
+    border-radius: 10px;
     margin-top: 50px;
     margin-bottom: 50px;
     display: flex;
@@ -11,4 +12,9 @@
   
   .title-container {
     margin-top: 6px;
+    border-radius: 10px;
+  }
+
+  .news-card {
+    margin-left: 10px;
   }
