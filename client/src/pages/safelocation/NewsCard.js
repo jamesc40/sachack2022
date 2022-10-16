@@ -1,20 +1,20 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import Stack from 'react-bootstrap/Stack';
 import Card from 'react-bootstrap/Card';
 
 function NewsCard() {
 
-  const url = "https://rss.nytimes.com/services/xml/rss/nyt/Climate.xml"
-  const [news, setNews] = useState([{}])
+//   const url = "https://rss.nytimes.com/services/xml/rss/nyt/Climate.xml"
+//   const [news, setNews] = useState([{}])
 
 
-  useEffect(() => {
-    fetch(url)
-    .then(response => response.json())
-    .then (news => setNews(news))
-},[])
+//   useEffect(() => {
+//     fetch(url)
+//     .then(response => response.json())
+//     .then (news => setNews(news))
+// },[])
 
-console.log(news)
+// console.log(news)
 
   return (
     <Stack className="news-card">
