@@ -4,7 +4,29 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 
-const NavBar = () => {
+const NavBar = ({
+  user,
+  showModal,
+  setShowLogin,
+  setShowModal,
+  minimal,
+  setUser,
+  navigate,
+}) => {
+  //handle click to setShowlogin to false and show modal to true
+  function handleClick() {
+    setShowLogin(false);
+    setShowModal(true);
+    fetch("/logout", { method: "DELETE" }).then((r) => {
+      if (r.ok) {
+        //setting user state to null to show login modal in home page
+        setUser(null);
+        //navite to home page which has login modal
+        navigate("/");
+      }
+    });
+  }
+
   return (
     <Navbar>
       <Container>
@@ -19,7 +41,23 @@ const NavBar = () => {
               width="50px"
             />
           </Nav.Link>
-          <Nav.Link>Signout</Nav.Link>
+          {!user && !minimal ? (
+            <button
+              onClick={handleClick}
+              className="nav_btn"
+              disabled={showModal}
+            >
+              Login
+            </button>
+          ) : (
+            <button
+              onClick={handleClick}
+              className="nav_btn"
+              disabled={showModal}
+            >
+              Logout
+            </button>
+          )}
         </Nav>
       </Container>
     </Navbar>

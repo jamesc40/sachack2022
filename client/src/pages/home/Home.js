@@ -2,12 +2,17 @@ import React, { useState } from "react";
 import AuthModal from "../../components/AuthModal";
 import NavBar from "../../components/NavBar";
 import "./home.css";
-const Home = () => {
-  const user = false;
+const Home = ({
+  user,
+  setUser,
+  navigate,
+  showLogin,
+  showModal,
+  setShowModal,
+  setShowLogin,
+}) => {
   //create useState for showing login modal
-  const [showModal, setShowModal] = useState(false);
-  //create useState for showing login
-  const [showLogin, setShowLogin] = useState(true);
+
   // handling logout which clears user sessions in backend
 
   // handling logout which clears user sessions in backend
@@ -15,10 +20,9 @@ const Home = () => {
     fetch("/logout", { method: "DELETE" }).then((r) => {
       if (r.ok) {
         //setting user state to null to show login modal in home page
-        // setUser(null);
+        setUser(null);
         //navite to home page which has login modal
-        // navigate("/");
-        console.log(r.ok);
+        navigate("/");
       }
     });
   }
@@ -31,8 +35,6 @@ const Home = () => {
 
   return (
     <>
-      <NavBar />
-
       <div className="home">
         <h1 className="primary_title">Do you need help?</h1>
         <button
@@ -43,9 +45,11 @@ const Home = () => {
         </button>
         {showModal && (
           <AuthModal
-            showLogin={showLogin}
-            setShowLogin={setShowLogin}
             setShowModal={setShowModal}
+            setUser={setUser}
+            setShowLogin={setShowLogin}
+            navigate={navigate}
+            showLogin={showLogin}
           />
         )}
       </div>

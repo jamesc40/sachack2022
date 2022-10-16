@@ -5,10 +5,9 @@ class UsersController < ApplicationController
   def index
     user = User.all
     render json: user, status: :ok
-  
   end
 
-   def show
+  def show
     render json: @current_user
   end
 
@@ -33,7 +32,7 @@ class UsersController < ApplicationController
   private
     
   def user_params
-    params.permit(:firstName, :lastName, :email, :password, :password_digest, :longitude, :latitude, :isSafe)
+    params.permit(:email, :password)
   end
 
    

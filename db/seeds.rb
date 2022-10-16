@@ -7,6 +7,6 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 puts "Seeding User Data.."
-User.create(firstName: "Hyun", lastName:"Cho", email: "hcho774@gmail.com", password_digest: "WaterMelon123!", longitude: 1.234, latitude: 1.34, isSafe: true)
+User.create(firstName: "Hyun", lastName:"Cho", email: "hcho774@gmail.com", password_digest: BCrypt::Password.create("123"), longitude: 1.234, latitude: 1.34, isSafe: true)
 
 puts "seeding done"
