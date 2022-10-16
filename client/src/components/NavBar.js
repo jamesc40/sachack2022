@@ -4,7 +4,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 
-const NavBar = () => {
+const NavBar = ({ isLoggedin }) => {
   return (
     <Navbar>
       <Container>
@@ -19,7 +19,14 @@ const NavBar = () => {
               width="50px"
             />
           </Nav.Link>
-          <Nav.Link>Signout</Nav.Link>
+          {!isLoggedin ? (
+            <>
+              <Nav.Link href="login">Login</Nav.Link>
+              <Nav.Link href="signup">Signup</Nav.Link>
+            </>
+          ) : (
+            <Nav.Link>Signout</Nav.Link>
+          )}
         </Nav>
       </Container>
     </Navbar>
